@@ -5,14 +5,12 @@ import jwt from 'jsonwebtoken'
 import { Sequelize, DataTypes } from 'sequelize'
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 
-// ================== JWT ==================
 const SECRET_KEY = 'mi_clave_secreta_super_segura'
 
-// LOGIN (NO lleva middleware)
 app.post('/login', (req, res) => {
     const { username, password } = req.body
 
@@ -27,7 +25,6 @@ app.post('/login', (req, res) => {
     }
 })
 
-// ================== MIDDLEWARE TOKEN ==================
 const verificarToken = (req, res, next) => {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
