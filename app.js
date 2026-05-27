@@ -9,6 +9,11 @@ const port = process.env.PORT || 3000
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.send('API peliculas funcionando')
+})
+
+const SECRET_KEY = 'mi_clave_secreta_super_segura'
 const SECRET_KEY = 'mi_clave_secreta_super_segura'
 
 app.post('/login', (req, res) => {
