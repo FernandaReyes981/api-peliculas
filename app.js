@@ -15,8 +15,6 @@ app.get('/', (req, res) => {
 
 const SECRET_KEY = 'mi_clave_secreta_super_segura'
 
-const SECRET_KEY = 'mi_clave_secreta_super_segura'
-const SECRET_KEY = 'mi_clave_secreta_super_segura'
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body
